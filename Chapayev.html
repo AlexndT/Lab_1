@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            color: #333;
+            background-color: #f2f2f2;
+            padding: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            text-shadow: 2px 10px 20px #ff0000;
+        }
+
+        img {
+            width: 550px;
+            height: 329px;
+            display: block;
+            margin: 0 auto;
+            border: 5px solid #ff0000;
+        }
+
+        input[type=button]:hover {
+            background-color: #4cff00;
+        }
+
+        .bordered {
+            border: 5px solid #ff6a00;
+            padding: 25px;
+            margin: 10px 0;
+        }
+
+
+    </style>
+    <title>Резюме</title>
+</head>
+<body>
+    <h1>Мое резюме</h1>
+    <img src="http://tunnel.ru/tmp/k02hzxdLPjqsp1vD9a6E/5-sentyabrya-1919-goda-pogib-vasiliy-ivanovich-chapaev-%2832-goda%29--uchastnik-pervoy-mirovoy-i-grajdanskoy-voyn%2C-nachdiv-krasnoy-armii..jpg" alt="Фото">
+    <div id="name" class="bordered">Имя: <span id="firstName">Василий</span></div>
+    <div id="surname" class="bordered">Фамилия: <span id="lastName">Чапаев</span></div>
+    <div class="bordered">Возраст: <span id="age">30</span></div>
+    <input type="text" id="newFirstName" placeholder="Новое имя">
+    <input type="text" id="newLastName" placeholder="Новая фамилия">
+    <input type="button" value="Изменить имя" onclick="changeFirstName()">
+    <input type="button" value="Изменить фамилию" onclick="changeLastName()">
+    <input type="button" value="Изменить цвет фона" onclick="changeBgColor()">
+    <div class="bordered"> Внимание, анекдот!: <span id="Anekdot">
+    — Василий Иванович, а белые в Америке есть?
+    — Есть, Анка. Но коренное население там – красные!
+</span></div>
+
+    <script>
+        function changeFirstName() {
+            var newFirstName = document.getElementById('newFirstName').value;
+            if (newFirstName) {
+                document.getElementById('firstName').textContent = newFirstName;
+            }
+        }
+
+        function changeLastName() {
+            var newLastName = document.getElementById('newLastName').value;
+            if (newLastName) {
+                document.getElementById('lastName').textContent = newLastName;
+            }
+        }
+
+        function changeBgColor() {
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
